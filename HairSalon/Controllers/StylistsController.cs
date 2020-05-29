@@ -72,7 +72,7 @@ namespace HairSalon.Controllers
     [HttpGet("/search")]
     public ActionResult Search(string search)
     {
-      List<Stylist> model = _db.Stylists.Include(stylists => stylists.Restaurants).ToList();
+      List<Stylist> model = _db.Stylists.Include(stylists => stylists.Clients).ToList();
 
       Stylist match = new Stylist();
 
@@ -86,7 +86,7 @@ namespace HairSalon.Controllers
          }
        } 
       }
-      List<Restaurant> matches = match.Restaurants.ToList();
+      List<Client> matches = match.Clients.ToList();
       return View(matches);
     }
   }

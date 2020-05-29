@@ -51,5 +51,19 @@ namespace HairSalon.Controllers
       return RedirectToAction("Index");
     }
 
+    public ActionResult Delete(int id)
+    {
+      var thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
+      return View(thisClient);
+    }
+
+    [HttpPost, ActionName("Delete")] // so we can utilize the "Delete" action still.
+    public ActionResult DeleteConfirmed(int id) // different name because GET & POST have same signature (method name and parameters)
+    {
+      var thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
+      _db.Clients.Remove(thisClient);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
