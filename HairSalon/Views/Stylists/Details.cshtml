@@ -12,7 +12,7 @@
 <ul>
   @if (@Model.Clients.Count == 0)
   {
-    <p>This stylst no clients yet</p>
+    <p>This stylist has no clients yet</p>
   }
 </ul>
 <br>
@@ -20,10 +20,17 @@
 <hr />
 @foreach (Review review in Model.Reviews)
 {
-  <div id="card">
-  <p>@review.Description</p>
-  <h3>@review.Rating</h3>
-  </div>
+   @if (@Model.Reviews.Count == 0)
+  {
+    <p>This stylist has no reviews</p>
+  }
+  else
+  {
+    <div id="card">
+    <p>@review.Description</p>
+    <h3>@review.Rating</h3>
+    </div>
+  }
 }
 <br>
 <p>@Html.ActionLink("Add a review", "Create", "Reviews")</p>
