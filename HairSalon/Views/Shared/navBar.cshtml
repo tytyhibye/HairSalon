@@ -6,7 +6,7 @@
   <form action="/search" method="get">
   @Html.DropDownList("search",
   new SelectList(Enum.GetNames(typeof(StylistName))),
-  "Stylist Type", new { @class = "form-control"})
+  "Stylist Name", new { @class = "form-control"})
   <br>
   <input type="submit" value="Search Clients by Stylist">
   </form>
