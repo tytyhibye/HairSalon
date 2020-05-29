@@ -1,0 +1,20 @@
+@using HairSalon.Models;
+<img src='~/img/chs-header.JPG' alt="Claire's Hair Salon Header" margin="0 auto" height="auto" width="100%" style="border: 5px double black">
+  <br>
+  <br>
+  <div id="navBar">
+  <form action="/search" method="get">
+  @Html.DropDownList("search",
+  new SelectList(Enum.GetNames(typeof(StylistName))),
+  "Stylist Type", new { @class = "form-control"})
+  <br>
+  <input type="submit" value="Search Clients by Stylist">
+  </form>
+
+    <ul class="nav nav-tabs animated bounceInDown">
+      <li role="presentation"><a href="/">Home</a></li>
+      <li role="presentation"><a href="/clients">Clients</a></li>
+      <li role="presentation"><a href="/stylists">Stylists</a></li>
+      <li role="presentation"><a href="/reviews">Reviews</a></li>
+    </ul>
+  </div>
