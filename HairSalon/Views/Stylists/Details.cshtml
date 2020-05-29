@@ -9,11 +9,12 @@
 }
 
 <h2>Stylist Details</h2>
+<p>@Html.ActionLink("Edit info", "Edit", new { id = Model.StylistId }) |
+@Html.ActionLink("Delete Stylist", "Delete", new { id = Model.StylistId })</p>
 <hr />
 <h4>@Html.DisplayNameFor(model => model.Name)</h4><h3>@Html.DisplayFor(model => model.Name)</h3>
 <br>
 <h4>@Html.DisplayNameFor(model => model.Description)</h4><h3>"@Html.DisplayFor(model => model.Description)"<h4>
-@Html.ActionLink("Edit info", "Edit", "Stylists", new { id = stylist.StylistId })
 <hr />
 <h3>Clients:</h3>
 
@@ -47,7 +48,7 @@
     <div id="card">
     <h4>@review.Description</h4>
     <p>This client rated their experience @review.Rating /3 stars!</p>
-    @Html.ActionLink("Edit Review", "Edit", "Reviews", new { id = review.ReviewId })
+    @Html.ActionLink("Edit Review", "Edit", new { id = Model.ReviewId })
     <hr />
     </div>
   }

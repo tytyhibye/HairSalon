@@ -38,7 +38,9 @@
   box-shadow: 0px 0px 10px #fff;
   padding: -1px;
 }
-
+.btn:hover {
+  
+}
 .btn:active {
   background-color: rgb(79, 218, 79);
   transform: scale(.95);
