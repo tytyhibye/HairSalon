@@ -4,13 +4,16 @@
 
 @using HairSalon.Models;
 @model HairSalon.Models.Stylist;
-
+@{
+  Stylist stylist = new Stylist();
+}
 
 <h2>Stylist Details</h2>
 <hr />
 <h4>@Html.DisplayNameFor(model => model.Name)</h4><h3>@Html.DisplayFor(model => model.Name)</h3>
 <br>
 <h4>@Html.DisplayNameFor(model => model.Description)</h4><h3>"@Html.DisplayFor(model => model.Description)"<h4>
+@Html.ActionLink("Edit info", "Edit", new { id = stylist.StylistId })
 <hr />
 <h3>Clients:</h3>
 
@@ -23,12 +26,12 @@
     }
     else
     {
-      <li>@client.Name</li>
-    @* @Html.ActionLink($"{}", "Details", new { id = client.ClientId }) *@
+      <li>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId })</li>
+      <hr />
     }
   }
 </ul>
-<br>
+<hr />
 <h3>Stylist's Reviews:</h3>
 <hr />
 @foreach (Review review in Model.Reviews)
@@ -40,10 +43,13 @@
   else
   {
     <div id="card">
-    <p>@review.Description</p>
+    <h4>@review.Description</h4>
     <p>This client rated their experience @review.Rating /3 stars!</p>
+    @Html.ActionLink("Edit Review", "Edit", "Reviews", new { id = review.ReviewId })
+    <hr />
     </div>
   }
 }
-<br>
-<p>@Html.ActionLink("Add a review", "Create", "Reviews")</p>
+<form action="/Reviews/Create" method="get">
+<button type="submit" class="btn">Add a Review</button>
+</form>

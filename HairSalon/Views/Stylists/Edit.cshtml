@@ -5,8 +5,8 @@
 @model HairSalon.Models.Stylist
 
 <h2>Edit Page</h2>
-
-<h4>Edit this stylist: @Html.DisplayFor(model => model.Name)</h4>
+<hr />
+<h4>Editing info for: @Html.DisplayFor(model => model.Name)</h4>
 
 @using (Html.BeginForm())
 {
@@ -14,6 +14,10 @@
 
     @Html.LabelFor(model => model.Name)
     @Html.EditorFor(model => model.Name)
-
-    <input type="submit" value="Save" class="btn" />
+    <br>
+    @Html.LabelFor(model => model.Description)
+    @Html.EditorFor(model => model.Description)
+    <br>
+    <br>
+    <input type="submit" value="Update" form = "editForm" class="btn"/>
 }
