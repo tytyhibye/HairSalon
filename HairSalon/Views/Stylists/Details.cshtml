@@ -4,9 +4,9 @@
 
 @using HairSalon.Models;
 @model HairSalon.Models.Stylist;
-@{
+@* @{
   Stylist stylist = new Stylist();
-}
+} *@
 
 <h2>Stylist Details</h2>
 <p>@Html.ActionLink("Edit info", "Edit", new { id = Model.StylistId }) |
@@ -17,23 +17,27 @@
 <h4>@Html.DisplayNameFor(model => model.Description)</h4><h3>"@Html.DisplayFor(model => model.Description)"<h4>
 <hr />
 <h3>Clients:</h3>
-
-<ul>
-  @foreach(Client client in Model.Clients)
+@{
+  Console.WriteLine("outside loop");
+  Console.WriteLine(Model.Clients.Count);
+}
+@foreach (Client client in Model.Clients)
+{
+  Console.WriteLine("inside loop1");
+  @if (@Model.Clients.Count == 0)
   {
-    @if (@Model.Clients.Count == 0)
-    {
-      <p>This stylist has no clients yet</p>
-    }
-    else
-    {
-      <div id="card">
-      <li>@Html.ActionLink($"{client.Name}", "Details", "Clients", new {id = client.ClientId})</li>
-      </div>
-      <hr />
-    }
+    <p>This stylist has no clients</p>
   }
-</ul>
+  else
+  {
+    Console.WriteLine("inside loop2");
+    <div id="card">
+    <li>@Html.ActionLink($"{client.Name}", "Details", "Clients", new {id = client.ClientId})</li>
+    </div>
+    <hr />
+  }
+}
+
 <hr />
 <h3>Stylist's Reviews:</h3>
 <hr />
