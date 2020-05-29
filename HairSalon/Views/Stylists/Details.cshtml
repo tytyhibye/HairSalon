@@ -8,13 +8,14 @@
 
 <h2>Stylist Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
-<h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)<h3>
-
+<h4>@Html.DisplayNameFor(model => model.Name)</h4><h3>@Html.DisplayFor(model => model.Name)</h3>
+<br>
+<h4>@Html.DisplayNameFor(model => model.Description)</h4><h3>"@Html.DisplayFor(model => model.Description)"<h4>
+<hr />
 <h3>Clients:</h3>
 
 <ul>
-  @foreach(Client client in Model)
+  @foreach(Client client in Model.Clients)
   {
     @if (@Model.Clients.Count == 0)
     {
@@ -22,14 +23,15 @@
     }
     else
     {
-      <li>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId }) | @client.Stylist.Name</li> //property names of the object we pass in {id = item.ItemId} MUST match parameter names used by the target method (Details())
+      <li>@client.Name</li>
+    @* @Html.ActionLink($"{}", "Details", new { id = client.ClientId }) *@
     }
   }
 </ul>
 <br>
-<h3>Stylist's Reviews</h3>
+<h3>Stylist's Reviews:</h3>
 <hr />
-@foreach (Review review in Model)
+@foreach (Review review in Model.Reviews)
 {
   @if (@Model.Reviews.Count == 0)
   {
@@ -39,7 +41,7 @@
   {
     <div id="card">
     <p>@review.Description</p>
-    <h3>@review.Rating</h3>
+    <p>This client rated their experience @review.Rating /3 stars!</p>
     </div>
   }
 }

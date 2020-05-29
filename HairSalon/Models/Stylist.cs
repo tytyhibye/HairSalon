@@ -13,7 +13,7 @@ namespace HairSalon.Models
     public int StylistId { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }
-    public virtual ICollection<Review> Reviews {get;set;}
+    public virtual ICollection<Review> Reviews { get; set; }
     public virtual ICollection<Client> Clients { get; set; } // generic interface - collection of method signatures bundled together.
                                                                      // ICollection required by Entity to outline methods for querying and changing data.
   }
