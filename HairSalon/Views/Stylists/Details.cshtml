@@ -48,7 +48,7 @@
     <div id="card">
     <h4>@review.Description</h4>
     <p>This client rated their experience @review.Rating /3 stars!</p>
-    @Html.ActionLink("Edit Review", "Edit", new { id = Model.ReviewId })
+    @Html.ActionLink("Edit Review", "Edit", "Reviews", new { id = Model.StylistId })
     <hr />
     </div>
   }

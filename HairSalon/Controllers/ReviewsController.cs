@@ -27,6 +27,28 @@ namespace HairSalon.Controllers
       _db.SaveChanges();
       return RedirectToAction("Details", "Stylists",  new {id = review.StylistId});
     }
-  }
 
+    [HttpPost]
+    public ActionResult Edit(Review review)
+    {
+      _db.Entry(review).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult Delete(int id)
+    {
+      var thisReview = _db.Reviews.FirstOrDefault(reviews => reviews.ReviewId == id);
+      return View(thisReview);
+    }
+
+    [HttpPost, ActionName("Delete")] // so we can utilize the "Delete" action still.
+    public ActionResult DeleteConfirmed(int id) // different name because GET & POST have same signature (method name and parameters)
+    {
+      var thisReview = _db.Reviews.FirstOrDefault(reviews => reviews.ReviewId == id);
+      _db.Reviews.Remove(thisReview);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+  }
 }
