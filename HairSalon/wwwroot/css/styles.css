@@ -1,0 +1,143 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+#navBar {
+  position:center;
+  width: auto;
+  height: auto;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  text-shadow: 0px 0px 12px rgb(0, 0, 0), 0px 0px 12px rgb(177, 177, 177);
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: break-word;
+  font-size: auto;
+  font-family: "Open Sans",  Impact;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0px 0px 10px #fff ;
+  padding:8px;
+  text-align: center;
+}
+
+.btn {
+  width: auto;
+  height: auto;
+  color: rgb(248, 248, 215);
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-shadow: 0px 0px 12px rgb(255, 251, 0), 0px 0px 12px #fff;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: break-word;
+  font-family: "Open Sans",  Impact;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgb(47, 0, 61);
+  border-radius: 40px;
+  box-shadow: 0px 0px 10px #fff;
+  padding: -1px;
+}
+
+.btn:active {
+  background-color: rgb(79, 218, 79);
+  transform: scale(.95);
+}
+
+.btn:hover {
+  background-color: rgb(82, 71, 71);
+  transform: scale(1.2);
+}
+li {
+  text-shadow: none;
+  color: black;
+  font-size: 30px;
+}
+
+body {
+  text-align: center;
+  padding: 10%;
+  height:100vh;
+  width:100vw;
+  background-color: rgb(255, 255, 255);
+  background: linear-gradient(rgb(192, 32, 255), rgb(224, 122, 255), rgb(246, 199, 255), rgba(255, 255, 255, 0.986));
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  display: block;
+  min-height: 100%;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+  letter-spacing: -4px;
+  font-weight: 700;
+  text-shadow: 0px 0px 12px rgb(255, 255, 255), 0px 0px 12px rgb(131, 255, 137);
+  font-family: "Open Sans",  Impact;
+  font-size: auto;
+}
+
+h2 {
+  text-shadow: 0px, 0px;
+}
+
+h3 {
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  font-family: "Open Sans",  Impact;
+  font-size: auto;
+}
+
+.jumbotron {
+  background-color: rgba(0, 0, 0, 0.349);
+  text-align: center;
+  margin: auto;
+  width: 80%;
+}
+
+.animated {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+  animation-name: bounceInDown;
+}
+
+
+@-webkit-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+  }
+  80% {
+    -webkit-transform: translateY(-10px);
+  }
+  100% { 
+    -webkit-transform: translateY(0);
+  }
+}
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+      transform: translateY(-2000px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(30px);
+    }
+    80% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+   }
+}
