@@ -4,7 +4,7 @@
 
 @using HairSalon.Models;
 @model HairSalon.Models.Stylist;
-@model HairSalon.Models.Client;
+
 
 <h2>Stylist Details</h2>
 <hr />
@@ -14,7 +14,7 @@
 <h3>Clients:</h3>
 
 <ul>
-  @foreach(Client clients in Model)
+  @foreach(Client client in (dynamic)Model)
   {
     @if (@Model.Clients.Count == 0)
     {
@@ -29,7 +29,7 @@
 <br>
 <h3>Stylist's Reviews</h3>
 <hr />
-@foreach (Review review in Model.Reviews)
+@foreach (Review review in (dynamic)Model)
 {
   @if (@Model.Reviews.Count == 0)
   {
