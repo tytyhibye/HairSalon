@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Review;
+
+@using (Html.BeginForm())
+{
+  @Html.Label("Choose a Stylist to Rate:")
+  @Html.DropDownList("StylistId")
+  <br>
+  @Html.LabelFor(model => model.Description)
+  @Html.TextAreaFor(model => model.Description)
+  <br>
+  @Html.Label("1 Star")
+  @Html.RadioButtonFor(model => model.Rating, 1)
+  @Html.Label("2 Stars")
+  @Html.RadioButtonFor(model => model.Rating, 2)
+  @Html.Label("3 Stars")
+  @Html.RadioButtonFor(model => model.Rating, 3)
+  <br>
+  <br>
+<input type="submit" value="Add" class="btn">
+}
