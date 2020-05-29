@@ -28,6 +28,12 @@ namespace HairSalon.Controllers
       return RedirectToAction("Details", "Stylists",  new {id = review.StylistId});
     }
 
+    public ActionResult Edit(int id)
+    {
+      var thisReview = _db.Reviews.FirstOrDefault(reviews => reviews.ReviewId == id);
+      return View(thisReview);
+    }
+    
     [HttpPost]
     public ActionResult Edit(Review review)
     {
