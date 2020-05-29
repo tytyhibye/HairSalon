@@ -16,5 +16,8 @@
 {
   <li>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId }) | @client.Stylist.Name</li>
 }
-
-<p>@Html.ActionLink("Add new Client", "Create")</p>
+<br>
+<br>
+<form action="/clients/Create" method="get">
+<button type="submit" class="btn">Add new Client</button>
+</form>

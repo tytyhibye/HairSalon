@@ -25,6 +25,7 @@
   color: rgb(248, 248, 215);
   letter-spacing: 1px;
   font-weight: 700;
+  text-transform: uppercase;
   text-shadow: 0px 0px 12px rgb(255, 251, 0), 0px 0px 12px #fff;
   display: inline-block;
   white-space: nowrap;
@@ -71,7 +72,7 @@ body {
 
 h1 {
   color: rgb(0, 0, 0);
-  letter-spacing: -4px;
+  letter-spacing: 2px;
   font-weight: 700;
   text-shadow: 0px 0px 12px rgb(255, 255, 255), 0px 0px 12px rgb(131, 255, 137);
   font-family: "Open Sans",  Impact;
