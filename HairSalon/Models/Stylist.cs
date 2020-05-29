@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using MySql.Data.MySqlClient;
 
 namespace HairSalon.Models
 {
@@ -15,7 +16,7 @@ namespace HairSalon.Models
     public string Description { get; set; }
     public virtual ICollection<Review> Reviews { get; set; }
     public virtual ICollection<Client> Clients { get; set; } // generic interface - collection of method signatures bundled together.
-                                                                     // ICollection required by Entity to outline methods for querying and changing data.
+                                                             // ICollection required by Entity to outline methods for querying and changing data.
   }
   public enum StylistName
   {

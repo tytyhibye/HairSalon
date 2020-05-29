@@ -13,7 +13,7 @@
 <h4>@Html.DisplayNameFor(model => model.Name)</h4><h3>@Html.DisplayFor(model => model.Name)</h3>
 <br>
 <h4>@Html.DisplayNameFor(model => model.Description)</h4><h3>"@Html.DisplayFor(model => model.Description)"<h4>
-@Html.ActionLink("Edit info", "Edit", new { id = stylist.StylistId })
+@Html.ActionLink("Edit info", "Edit", "Stylists", new { id = stylist.StylistId })
 <hr />
 <h3>Clients:</h3>
 
@@ -26,7 +26,9 @@
     }
     else
     {
-      <li>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId })</li>
+      <div id="card">
+      <li>@Html.ActionLink($"{client.Name}", "Details", "Clients", new {id = client.ClientId})</li>
+      </div>
       <hr />
     }
   }
