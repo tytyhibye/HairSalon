@@ -14,10 +14,14 @@
   {
     <p>This stylst no clients yet</p>
   }
-
-  @* @foreach (Client client in @Model.Clients)
-  {
-    <li>Name: @client.Name | @Html.ActionLink("Edit Entry", "Edit", new { id = Model.StylistId })</li>
-    <li>Description: @client.Description | @Html.ActionLink("Delete Entry", "Delete", new { id = Model.StylistId })</li>
-  } *@
 </ul>
+<br>
+<h3>Stylist's Reviews</h3>
+<hr />
+@foreach (Review review in Model.Reviews)
+{
+  <div id="card">
+  <p>@review.Description</p>
+  <h3>@review.Rating</h3>
+  </div>
+}
