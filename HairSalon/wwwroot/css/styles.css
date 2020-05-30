@@ -52,6 +52,12 @@ footer{
   transform: scale(.95);
 }
 
+li {
+  text-shadow: none;
+  color: black;
+  font-size: 30px;
+}
+
 body {
   text-align: center;
   padding: 10%;
