@@ -49,7 +49,7 @@ namespace HairSalon.Controllers
     }
 
     [HttpPost, ActionName("Delete")]
-    public ActionResult DeleteConfirmed(int id)
+    public ActionResult DeleteConfirmed(int id) // different name because GET & POST have same signature (method name and parameters)
     {
       var thisReview = _db.Reviews.FirstOrDefault(reviews => reviews.ReviewId == id);
       _db.Reviews.Remove(thisReview);
