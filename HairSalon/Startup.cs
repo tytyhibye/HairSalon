@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using HairSalon.Models; // so the application understands what we mean by <HairSalonContext>
+using HairSalon.Models;
 
 namespace HairSalon
 {
@@ -14,7 +14,7 @@ namespace HairSalon
     {
       var builder = new ConfigurationBuilder()
       .SetBasePath(env.ContentRootPath)
-      .AddJsonFile("appsettings.json"); //this line replaces .AddEnvironmentVariables();
+      .AddJsonFile("appsettings.json");
       Configuration = builder.Build();
     }
 
@@ -32,7 +32,7 @@ namespace HairSalon
 
     public void Configure(IApplicationBuilder app)
     {
-      app.UseDeveloperExceptionPage(); // gives more precise error messages
+      app.UseDeveloperExceptionPage();
       
       app.UseMvc(routes =>
       {
@@ -41,8 +41,7 @@ namespace HairSalon
           template: "{controller=Home}/{action=Index}/{id?}");
       });
 
-      app.UseStaticFiles(); // for using static files like images/music/etc
-      // must be coded before app.Run or the files won't load.
+      app.UseStaticFiles();
       app.Run(async (context) =>
       {
         await context.Response.WriteAsync("Something went wrong!");

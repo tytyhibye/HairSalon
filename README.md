@@ -1,4 +1,4 @@
-[![wc-title.jpg](https://i.postimg.cc/yd3tmYRh/HSRM.jpg)](https://i.postimg.cc/yd3tmYRh/HSRM.jpg)
+![wc-title.jpg](https://i.ibb.co/qNFbGjj/chs-header.jpg)
 
 ### _Created by Tyler Bates_
 

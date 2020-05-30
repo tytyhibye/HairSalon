@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using MySql.Data.MySqlClient;
+
 
 namespace HairSalon.Models
 {
@@ -7,7 +7,7 @@ namespace HairSalon.Models
   {
     public Stylist()
     {
-      this.Clients = new HashSet<Client>(); // Hashset is an unordered collection of unique elements (more performant than a List but doesnt allow duplicates)
+      this.Clients = new HashSet<Client>();
       this.Reviews = new HashSet<Review>();
     }
 
@@ -15,8 +15,7 @@ namespace HairSalon.Models
     public string Name { get; set; }
     public string Description { get; set; }
     public virtual ICollection<Review> Reviews { get; set; }
-    public virtual ICollection<Client> Clients { get; set; } // generic interface - collection of method signatures bundled together.
-                                                             // ICollection required by Entity to outline methods for querying and changing data.
+    public virtual ICollection<Client> Clients { get; set; }
   }
   public enum StylistName
   {

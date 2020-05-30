@@ -48,8 +48,8 @@ namespace HairSalon.Controllers
       return View(thisReview);
     }
 
-    [HttpPost, ActionName("Delete")] // so we can utilize the "Delete" action still.
-    public ActionResult DeleteConfirmed(int id) // different name because GET & POST have same signature (method name and parameters)
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
     {
       var thisReview = _db.Reviews.FirstOrDefault(reviews => reviews.ReviewId == id);
       _db.Reviews.Remove(thisReview);

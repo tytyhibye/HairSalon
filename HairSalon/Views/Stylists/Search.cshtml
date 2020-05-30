@@ -4,9 +4,10 @@
 
 @using HairSalon.Models;
 
-<h2>Search Results:</h2>
+<h3>Search Results:</h3>
+<hr />
 
 @foreach(Client client in Model)
 {
-  <h3><li>@Html.ActionLink($"{client.Name}", "Details", "Clients", new {id = client.ClientId})</li></h3>
+  <h4><li>@Html.ActionLink($"{client.Name}", "Details", "Clients", new {id = client.ClientId})</li></h4>
 }

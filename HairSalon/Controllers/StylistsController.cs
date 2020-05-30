@@ -61,8 +61,8 @@ namespace HairSalon.Controllers
       return View(thisStylist);
     }
 
-    [HttpPost, ActionName("Delete")] // so we can utilize the "Delete" action still.
-    public ActionResult DeleteConfirmed(int id) // different name because GET & POST have same signature (method name and parameters)
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
     {
       var thisStylist = _db.Stylists.FirstOrDefault(stylists => stylists.StylistId == id);
       _db.Stylists.Remove(thisStylist);
