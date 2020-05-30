@@ -41,13 +41,13 @@ namespace HairSalon.Controllers
       Client thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
       return View("Details", thisClient);
     }
-
     public ActionResult Edit(int id)
     {
       var thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
+      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
       return View(thisClient);
     }
-    
+
     [HttpPost]
     public ActionResult Edit(Client client)
     {

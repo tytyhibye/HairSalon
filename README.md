@@ -46,6 +46,8 @@ http://localhost:5000
 ## <a href="https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29">C#</a>
 ## <a href="https://en.wikipedia.org/wiki/.NET_Core">.NET Core</a>
 ## <a href="https://en.wikipedia.org/wiki/Visual_Studio_Unit_Testing_Framework">MSTest</a>
+## <a href="https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/ef/language-reference/entity-sql-language">Entity</a>
+## <a href="https://www.mysql.com/products/workbench/">MySQL Workbench</a>
 
 ## _Specs_
 

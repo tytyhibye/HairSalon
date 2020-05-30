@@ -18,7 +18,13 @@
   padding:8px;
   text-align: center;
 }
-
+footer{
+  position: absolute;
+  bottom: 0;
+  left: 1em;
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.603);
+}
 .btn {
   width: auto;
   height: auto;
@@ -31,7 +37,7 @@
   white-space: nowrap;
   word-wrap: break-word;
   font-family: "Open Sans",  Impact;
-  font-size: 20px;
+  font-size: 10px;
   cursor: pointer;
   background-color: rgb(47, 0, 61);
   border-radius: 40px;
@@ -44,12 +50,6 @@
 .btn:active {
   background-color: rgb(79, 218, 79);
   transform: scale(.95);
-}
-
-li {
-  text-shadow: none;
-  color: black;
-  font-size: 30px;
 }
 
 body {
@@ -66,26 +66,6 @@ body {
   min-height: 100%;
   background-attachment: fixed;
   margin: 0;
-}
-
-h1 {
-  color: rgb(0, 0, 0);
-  letter-spacing: 2px;
-  font-weight: 700;
-  text-shadow: 0px 0px 12px rgb(255, 255, 255), 0px 0px 12px rgb(131, 255, 137);
-  font-family: "Open Sans",  Impact;
-  font-size: auto;
-}
-
-h2 {
-  text-shadow: 0px, 0px;
-}
-
-h3 {
-  color: rgb(0, 0, 0);
-  font-weight: 700;
-  font-family: "Open Sans",  Impact;
-  font-size: auto;
 }
 
 .jumbotron {

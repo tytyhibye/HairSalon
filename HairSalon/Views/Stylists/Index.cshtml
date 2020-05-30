@@ -10,14 +10,13 @@
 
 @foreach(Stylist stylist in Model)
 {
-  <li>@Html.ActionLink($"{stylist.Name}", "Details", new { id = stylist.StylistId })</li> //property names of the object we pass in {id = item.ItemId} MUST match parameter names used by the target method (Details())
+  <h4>@Html.ActionLink($"{stylist.Name}", "Details", new { id = stylist.StylistId })</h4>
 }
 
 @if (@Model.Count == 0)
 {
   <p>No stylists have been added yet!</p>
 } 
-<br>
 <br>
 <form action="/stylists/Create" method="get">
 <button type="submit" class="btn">Add new stylist</button>
