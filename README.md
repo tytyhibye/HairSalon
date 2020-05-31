@@ -39,7 +39,53 @@ dotnet watch run
 ```sh
 http://localhost:5000
 ```
-9. Enjoy
+#### MySQL Installation & Configuration:
+1. Download the MySQL Community Server DMG file [here](https://dev.mysql.com/downloads/file/?id=484914) with the "No thanks, just start my download" link.
+2. On the configuration page of the installer select the following options:
+* Use legacy password encryption
+* Set your password
+3. Open the terminal and enter the command:
+*'export PATH="/usr/local/mysql/bin:$PATH"' >> ~/.bash_profile
+4. Download the MySQL Workbench DMG file [here](https://dev.mysql.com/downloads/file/?id=484391)
+5. Open Local Instance 3306 with the password you set.
+
+#### Creating a local version of the database:
+1. Open MySQL Workbench and Local Instance 3306.
+2. Select the SQL + button in the top left of the navigation bar.
+3. Paste the following in the query section to create the database:
+
+```
+CREATE DATABASE `tyler_bates`;
+
+USE `tyler_bates`;
+
+CREATE TABLE `clients` (
+  `ClientId` INT NOT NULL AUTO_INCREMENT,
+  `Name` varchar(255) DEFAULT NULL,
+  `Description` varchar(255) DEFAULT NULL,
+  `StylistId` INT NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ClientId`)
+);
+
+CREATE TABLE `stylists` (
+  `StylistId` INT NOT NULL AUTO_INCREMENT,
+  `Name` varchar(255) DEFAULT NULL,
+  `Description` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`StylistId`)
+);
+
+CREATE TABLE `reviews` (
+  `ReviewId` INT NOT NULL AUTO_INCREMENT,
+  `Description` varchar(255) DEFAULT NULL,
+  `Rating` varchar(255) DEFAULT NULL,
+  `StylistId` INT NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ReviewId`)
+);
+
+```
+
+4. Press the lightning bolt button to run this command.
+5. If the database does not appear, right click in the schemas bar and select Refresh All.
 
 ## _Technology Used_
 
