@@ -73,21 +73,20 @@ namespace HairSalon.Controllers
     [HttpGet("/search")]
     public ActionResult Search(string search)
     {
-      List<Stylist> model = _db.Stylists.Include(stylists => stylists.Clients).ToList();
-
+      List<Stylist> model = _db.Stylists.Include(Stylists => Stylists.Clients).ToList();
       Stylist match = new Stylist();
-
+      List<Stylist> matches = new List<Stylist>{};
+      
       if (!string.IsNullOrEmpty(search))
       {
-       foreach(Stylist stylist in model)
+       foreach(Stylist Stylist in model)
        {
-         if (stylist.Name == search)
+         if (Stylist.Name.ToLower().Contains(search))
          {
-           match = stylist;
+           matches.Add(Stylist);
          }
        } 
       }
-      List<Client> matches = match.Clients.ToList();
       return View(matches);
     }
   }

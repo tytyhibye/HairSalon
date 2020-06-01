@@ -17,12 +17,4 @@ namespace HairSalon.Models
     public virtual ICollection<Review> Reviews { get; set; }
     public virtual ICollection<Client> Clients { get; set; }
   }
-  public enum StylistName
-  {
-    Claire,
-    Moriah,
-    Juanito,
-    Karen,
-    DreadlockDolores
-  }
 }

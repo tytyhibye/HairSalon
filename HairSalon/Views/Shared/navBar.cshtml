@@ -4,11 +4,8 @@
   <br>
   <div id="navBar">
   <form action="/search" method="get">
-  @Html.DropDownList("search",
-  new SelectList(Enum.GetNames(typeof(StylistName))),
-  "Stylist Name", new { @class = "form-control"})
   <br>
-  <input type="submit" value="Search Clients by Stylist">
+  <input type="submit" value="Search Clients by Stylist" class="btn">
   </form>
 
     <ul class="nav nav-tabs animated bounceInDown">
