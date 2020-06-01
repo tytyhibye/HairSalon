@@ -7,7 +7,7 @@
 <h3>Search Results:</h3>
 <hr />
 
-@foreach(Client client in Model)
+@foreach(Stylist stylist in Model)
 {
-  <h4>@Html.ActionLink($"{client.Name}", "Details", "Clients", new {id = client.ClientId})</h4>
+  <h4>@Html.ActionLink($"{stylist.Name}", "Details", "Stylists", new {id = stylist.StylistId})</h4>
 }
